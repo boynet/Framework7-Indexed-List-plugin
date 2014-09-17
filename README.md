@@ -1,6 +1,7 @@
 Framework7-alphascroll-plugin
 =============================
 demo: use it with touch device(or emulate in chrome)
+
 http://boynet.github.io/boynet/
 
 
@@ -25,3 +26,6 @@ Installation:
 ````
 
 4)you are done.
+
+DEMO:
+http://boynet.github.io/boynet/
