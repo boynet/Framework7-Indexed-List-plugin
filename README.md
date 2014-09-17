@@ -1,5 +1,8 @@
 Framework7-alphascroll-plugin
 =============================
+demo: use it with touch device(or emulate in chrome)
+http://boynet.github.io/boynet/
+
 
 this plugin is for alphabetical fast scroll like ios 7 have (and android), works only with Contacts List
 ![''](http://i58.tinypic.com/2608tmo.jpg)
