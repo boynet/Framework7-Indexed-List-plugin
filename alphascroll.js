@@ -16,7 +16,6 @@ Framework7.prototype.plugins.alphascroll = function (app, params) {
         page = page;
         pageContent = $$(page.container).find('.page-content');
         letters = getLetters();
-        console.log(letters);
 
         function handleTouchStart(e) {
             if (app.device.os === 'android') e.preventDefault();
