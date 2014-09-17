@@ -1,7 +1,7 @@
 Framework7-alphascroll-plugin
 =============================
 
-this plugin is for alphabetical scroll like ios 7 have (and android)
+this plugin is for alphabetical fast scroll like ios 7 have (and android), works only with Contacts List
 ![''](http://i58.tinypic.com/2608tmo.jpg)
 
 
