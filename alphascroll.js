@@ -75,7 +75,7 @@ Framework7.prototype.plugins.alphascroll = function (app, params) {
 
     return {
         hooks: {
-            appInit:initAlphascroll,
+            pageInit:initAlphascroll,
             pageAfterAnimation: initAlphascroll
         }
     };
