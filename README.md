@@ -10,19 +10,19 @@ this plugin is for Indexed-List scroll like ios 7 have (and android), works only
 
 
 Installation:
-1)put Indexed-List.js in your js folder and embed it after framework7.js
+1)put alphascroll.js in your js folder and embed it after framework7.js
 ````
 <script type="text/javascript" src="../dist/js/framework7.js"></script>
-<script type="text/javascript" src="js/Indexed-List.js"></script>
+<script type="text/javascript" src="js/alphascroll.js"></script>
 ````
 
 
-2)add Indexed-List.css to your project
+2)add alphascroll.css to your project
 
 
 3) put this html code inside your .page
 ````
-<ul class="Indexed-List"></ul>
+<ul class="alphascroll"></ul>
 ````
 
 4)you are done.
