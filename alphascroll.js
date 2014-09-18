@@ -1,70 +1,77 @@
-Framework7.prototype.plugins.alphascroll = function (app, params) {
+Framework7.prototype.plugins.indexedlist = function (app, params) {
     var $ = window.Dom7;
-    var letterToScroll, page;
-    var letterscrolled;
-    var elementHover;
-    var letters=[];
-    var eventsTarget;
-    var pageContent;
+    
 
-    function initAlphascroll(page) {
-        eventsTarget = $(page.container);
-        if (!eventsTarget.hasClass('.alphascroll')) {
-            eventsTarget = eventsTarget.find('.alphascroll');
-        }
+    function initIndexedList(page) {
+        var eventsTarget = $(page.container).find('.list-index');
         if (eventsTarget.length === 0) return;
-        page = page;
-        pageContent = $$(page.container).find('.page-content');
-        letters = getLetters();
-
+        
+        var pageContent = $(page.container).find('.page-content');
+        buildLetters();
+        var isTouched, isMoved;
+        var letterToScroll;
+        var elementHover;
+        var fixedNavbar = pageContent.parents('.navbar-fixed').length > 0 || pageContent.parents('.navbar-through').length > 0;
         function handleTouchStart(e) {
-            if (app.device.os === 'android') e.preventDefault();
+            e.preventDefault();
+            isTouched = true;
+
+            var target = $(e.target);
+            if (!target.is('li')) target = target.parents('li');
+            if (target.length > 0) {
+                scrollToLetter(target.eq(0).data('index-letter'));
+            }
         }
 
         function handleTouchMove(e) {
-            elementHover = $$(document.elementFromPoint(e.touches[0].pageX, e.touches[0].pageY));
-            if (!$$(elementHover).is('li')) {
-                return;
+            if (!isTouched) return;
+            e.preventDefault();
+            var target;
+            if (e.type === 'mousemove') {
+                target = $(e.target);
             }
-            letterToScroll = elementHover.html();
-            hoverLetter();
+            else {
+                target = $(document.elementFromPoint(e.touches[0].pageX, e.touches[0].pageY));
+            }
+            if (!target.is('li')) target = target.parents('li');
+                
+            if (target.length === 0) return;
+            if (target.length > 0 && !target.is('.list-index li')) return;
+
+            scrollToLetter(target.eq(0).data('index-letter'));
         }
 
         function handleTouchEnd(e) {
-            pageContent.find('.alphascroll li.hover').removeClass('hover');
-            letterscrolled = null;
+            isTouched = isMoved = false;
         }
         
-        $$(page.container).on('click','.alphascroll li',function(e){
-            elementHover = $$(e.target);
-            letterToScroll = $$(e.target).html();
-            hoverLetter();
+        $(page.container).on('click','.list-index li',function(e){
+            var target = $(e.target);
+            if (!target.is('li')) target = target.parents('li');
+            if (target.length > 0) {
+                scrollToLetter(target.eq(0).data('index-letter'));
+            }
         });
 
-        function getLetters(){
+        function buildLetters(){
             var _letters = [];
-           pageContent.find('.list-group').each(function () {
-               _letterDiv = $$(this).find('ul .list-group-title');
-               _letter = _letterDiv.html();
-               _letterDiv.addClass('letter-'+_letter);
-               eventsTarget.append('<li>' + _letter + '</li>');
-              _letters.push(_letter);
-           });
+            var lettersHtml = '';
+            pageContent.find('.list-group').each(function () {
+                var _letterDiv = $(this).find('ul .list-group-title');
+                var _letter = _letterDiv.html().trim().charAt(0).toUpperCase();
+                _letterDiv.attr('data-index-letter', _letter);
+                lettersHtml += '<li data-index-letter="' + _letter + '">' + _letter + '</li>';
+                _letters.push(_letter);
+            });
+            eventsTarget.html(lettersHtml);
             return _letters;
         }
 
-        function hoverLetter() {
-            if (letterToScroll !== letterscrolled) {
-                pageContent.find('.alphascroll li.hover').removeClass('hover');
-                elementHover.addClass('hover');
-                offset = -43;
-                scrollTo = pageContent.find('.list-group ul li.letter-' + letterToScroll)
-                if (!scrollTo.length) return;
-                offset = offset + pageContent.offset().top + scrollTo.offset().top;
-                pageContent.scrollTop(offset);
-                letterscrolled = letterToScroll;
-            }
-
+        function scrollToLetter(letter) {
+            var scrollToEl = pageContent.find('.list-group ul li[data-index-letter="' + letter + '"]');
+            if (!scrollToEl.length) return;
+            var scrollTop = scrollToEl.offset().top + pageContent.scrollTop() - (fixedNavbar ? 44 : 0);
+            pageContent.scrollTop(scrollTop);
         }
 
         eventsTarget.on(app.touchEvents.start, handleTouchStart);
@@ -75,8 +82,7 @@ Framework7.prototype.plugins.alphascroll = function (app, params) {
 
     return {
         hooks: {
-            pageInit:initAlphascroll,
-            pageAfterAnimation: initAlphascroll
+            pageInit: initIndexedList,
         }
     };
 };
