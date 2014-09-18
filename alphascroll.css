@@ -1,4 +1,4 @@
-.Indexed-List {
+.alphascroll {
     color: #057bf7;
     list-style: none;
     position:absolute;
@@ -7,10 +7,9 @@
     position:absolute;
     z-index: 9999;
     padding:0px;
-    right:0px;
     top:50%;
     transform: translateY(-50%);
 }
-.Indexed-List li{
-     padding-right:5px;   
+.alphascroll li{
+     padding-left:5px;   
 }
