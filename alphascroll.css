@@ -1,15 +1,15 @@
 .alphascroll {
     color: #057bf7;
-    text-shadow: none;
     list-style: none;
-    position: fixed;
-    right: 0px;
-    z-index: 1001;
+    position:absolute;
     font-size: 12px;
     font-weight: bold;
-    margin:0px;
+    position:absolute;
+    z-index: 9999;
     padding:0px;
-    height:100%;
+    right:0px;
+    top:50%;
+    transform: translateY(-50%);
 }
 .alphascroll li{
      padding-right:5px;   
