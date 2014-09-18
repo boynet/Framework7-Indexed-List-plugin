@@ -12,6 +12,13 @@ Framework7.prototype.plugins.indexedlist = function (app, params) {
         var letterToScroll;
         var elementHover;
         var fixedNavbar = pageContent.parents('.navbar-fixed').length > 0 || pageContent.parents('.navbar-through').length > 0;
+        var searchBar = $(page.container).find('.searchbar').length > 0;
+        
+        if (searchBar){
+            console.log(eventsTarget);
+            eventsTarget.css('margin-top','44px');
+        }
+        
         function handleTouchStart(e) {
             e.preventDefault();
             isTouched = true;
@@ -70,7 +77,7 @@ Framework7.prototype.plugins.indexedlist = function (app, params) {
         function scrollToLetter(letter) {
             var scrollToEl = pageContent.find('.list-group ul li[data-index-letter="' + letter + '"]');
             if (!scrollToEl.length) return;
-            var scrollTop = scrollToEl.offset().top + pageContent.scrollTop() - (fixedNavbar ? 44 : 0);
+            var scrollTop = scrollToEl.offset().top + pageContent.scrollTop() - (fixedNavbar ? 44 : 0) - (searchBar ? 44 : 0);
             pageContent.scrollTop(scrollTop);
         }
 
