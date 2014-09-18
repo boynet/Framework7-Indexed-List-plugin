@@ -31,7 +31,6 @@ Framework7.prototype.plugins.alphascroll = function (app, params) {
         }
 
         function handleTouchEnd(e) {
-            pageContent.find('.alphascroll li.hover').removeClass('hover');
             letterscrolled = null;
         }
         
@@ -56,7 +55,6 @@ Framework7.prototype.plugins.alphascroll = function (app, params) {
         function hoverLetter() {
             if (letterToScroll !== letterscrolled) {
                 pageContent.find('.alphascroll li.hover').removeClass('hover');
-                elementHover.addClass('hover');
                 offset = -43;
                 scrollTo = pageContent.find('.list-group ul li.letter-' + letterToScroll)
                 if (!scrollTo.length) return;
