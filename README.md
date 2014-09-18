@@ -20,7 +20,7 @@ Installation:
 2)add alphascroll.css to your project
 
 
-3) put this html code inside your .page-content before .contacts-block
+3) put this html code inside your .page
 ````
 <ul class="alphascroll"></ul>
 ````
