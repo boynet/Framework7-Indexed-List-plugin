@@ -1,4 +1,4 @@
-Framework7.prototype.plugins.Indexed-List = function (app, params) {
+Framework7.prototype.plugins.alphascroll = function (app, params) {
     var $ = window.Dom7;
     var letterToScroll, page;
     var letterscrolled;
@@ -9,8 +9,8 @@ Framework7.prototype.plugins.Indexed-List = function (app, params) {
 
     function initAlphascroll(page) {
         eventsTarget = $(page.container);
-        if (!eventsTarget.hasClass('.Indexed-List')) {
-            eventsTarget = eventsTarget.find('.Indexed-List');
+        if (!eventsTarget.hasClass('.alphascroll')) {
+            eventsTarget = eventsTarget.find('.alphascroll');
         }
         if (eventsTarget.length === 0) return;
         page = page;
@@ -31,10 +31,11 @@ Framework7.prototype.plugins.Indexed-List = function (app, params) {
         }
 
         function handleTouchEnd(e) {
+            pageContent.find('.alphascroll li.hover').removeClass('hover');
             letterscrolled = null;
         }
         
-        $$(pageContent).on('click','.Indexed-List li',function(e){
+        $$(page.container).on('click','.alphascroll li',function(e){
             elementHover = $$(e.target);
             letterToScroll = $$(e.target).html();
             hoverLetter();
@@ -54,7 +55,8 @@ Framework7.prototype.plugins.Indexed-List = function (app, params) {
 
         function hoverLetter() {
             if (letterToScroll !== letterscrolled) {
-                pageContent.find('.Indexed-List li.hover').removeClass('hover');
+                pageContent.find('.alphascroll li.hover').removeClass('hover');
+                elementHover.addClass('hover');
                 offset = -43;
                 scrollTo = pageContent.find('.list-group ul li.letter-' + letterToScroll)
                 if (!scrollTo.length) return;
