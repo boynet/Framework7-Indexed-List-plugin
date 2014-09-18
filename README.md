@@ -1,31 +1,29 @@
-Framework7-Indexed-List-plugin
+Framework7 Indexed List Plugin
 =============================
-demo: use it with touch device(or emulate in chrome)
-
-http://boynet.github.io/boynet/
+Demo: http://boynet.github.io/boynet/
 
 
-this plugin is for Indexed-List scroll like ios 7 have (and android), works only with Contacts List
+This plugin is for Indexed-List scroll like iOS have (and Android), currently works only with Contacts List
 ![''](http://i58.tinypic.com/2608tmo.jpg)
 
 
-Installation:
-1)put alphascroll.js in your js folder and embed it after framework7.js
+## Installation:
+1) put `framework7.indexed-list.js` in your js folder and embed it after framework7.js
 ````
 <script type="text/javascript" src="../dist/js/framework7.js"></script>
-<script type="text/javascript" src="js/alphascroll.js"></script>
+<script type="text/javascript" src="js/framework7.indexed-list.js"></script>
 ````
 
 
-2)add alphascroll.css to your project
+2) add `framework7.indexed-list.css` to your project
 
 
 3) put this html code inside your .page
 ````
-<ul class="alphascroll"></ul>
+<ul class="list-index"></ul>
 ````
 
-4)you are done.
+4) you are done.
 
-DEMO:
+## Demo:
 http://boynet.github.io/boynet/
