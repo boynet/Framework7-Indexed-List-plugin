@@ -1,0 +1,29 @@
+{
+  "name": "Framework7 Indexed List",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boynet/Framework7-Indexed-List-plugin.git"
+  },
+  "description": "Framework7 plugin to add Indexed-List scroll",
+  "version": "0.1.0",
+  "author": "boynet",
+  "homepage": "https://github.com/boynet/Framework7-Indexed-List-plugin",
+  "keywords": ["mobile", "framework", "ios 7", "ios7", "ios8", "ios 8", "iphone", "ipad", "apple", "phonegap", "native", "touch", "appstore", "app", "f7","indexed list"],
+  "scripts": [
+    "dist/framework7.indexed-list.js"
+  ],
+  "main": [
+    "dist/framework7.indexed-list.js",
+    "framework7.indexed-list.css"
+  ],
+  "license": ["MIT"],
+  "dependencies": {
+  },
+  "ignore": [
+    ".*",
+    "build",
+    "Gruntfile.js",
+    "node_modules",
+    "package.json"
+  ]
+}
