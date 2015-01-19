@@ -1,0 +1,9 @@
+{
+  "name": "Framework7-Indexed-List-plugin-Demo",
+  "description": "Demo for Framework7-Indexed-List-plugin plugin",
+  "author": "boynet",
+  "license": ["MIT"],
+  "dependencies": {
+    "framework7": "~0.9.5"
+  }
+}
