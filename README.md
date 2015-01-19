@@ -25,6 +25,11 @@ And link them to your app's right AFTER Framework7's scripts and styles:
 <script src="path/to/framework7.indexed-list.js"></script>
 ```
 
+## Usage
+ put this html code inside .page
+````
+<ul class="list-index"></ul>
+````
 
 ## Demo:
 http://boynet.github.io/boynet/
