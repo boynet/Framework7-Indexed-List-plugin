@@ -7,23 +7,24 @@ This plugin is for Indexed-List scroll like iOS have (and Android), currently wo
 ![''](http://i58.tinypic.com/2608tmo.jpg)
 
 
-## Installation:
-1) put `framework7.indexed-list.js` in your js folder and embed it after framework7.js
-````
-<script type="text/javascript" src="../dist/js/framework7.js"></script>
-<script type="text/javascript" src="js/framework7.indexed-list.js"></script>
-````
+## Installation
 
+Just grab plugin files from `dist/` folder or using bower:
 
-2) add `framework7.indexed-list.css` to your project
+```
+bower install framework7-indexed-list-plugin
+```
 
+And link them to your app's right AFTER Framework7's scripts and styles:
 
-3) put this html code inside your .page
-````
-<ul class="list-index"></ul>
-````
+```
+<link rel="stylesheet" href="path/to/framework7.min.css">
+<link rel="stylesheet" href="path/to/framework7.indexed-list.css">
+...
+<script src="path/to/framework7.min.js"></script>
+<script src="path/to/framework7.indexed-list.js"></script>
+```
 
-4) you are done.
 
 ## Demo:
 http://boynet.github.io/boynet/
