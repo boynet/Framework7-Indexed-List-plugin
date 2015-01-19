@@ -27,7 +27,9 @@ This plugin is for Indexed-List scroll like iOS have (and Android), currently wo
 
 ## Demo:
 http://boynet.github.io/boynet/
+
 OR:
+
 Plugin comes with demo example to see how it works and looks. To make demo works you need: 
 
 * install bower dependencies. Go to `demo/` folder and execute in terminal `bower install`
