@@ -1,3 +1,15 @@
+/*
+ * Framework7 Indexed List 0.1.0
+ * Framework7 plugin to add Alphabet indexed list
+ *
+ * https://github.com/boynet/Framework7-Indexed-List-plugin
+ *
+ * Copyright 2015, boynet
+ *
+ * Licensed under MIT
+ *
+ * Released on: 17 Sep, 2014
+*/
 Framework7.prototype.plugins.indexedlist = function (app, params) {
     var $ = window.Dom7;
     
