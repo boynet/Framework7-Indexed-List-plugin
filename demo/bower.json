@@ -4,6 +4,6 @@
   "author": "boynet",
   "license": ["MIT"],
   "dependencies": {
-    "framework7": "~0.9.5"
+    "framework7": "~1.2.0"
   }
 }
