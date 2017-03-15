@@ -3,7 +3,7 @@ Framework7 Indexed List Plugin
 Demo: http://boynet.github.io/boynet/
 
 
-This plugin is for Indexed-List scroll like iOS have (and Android), currently works only with Contacts List
+This plugin is for Indexed-List scroll like iOS and Android have, currently works only with Contacts List
 
 ![''](http://i58.tinypic.com/2608tmo.jpg)
 
