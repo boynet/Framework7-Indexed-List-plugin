@@ -1,5 +1,5 @@
 /*
- * Framework7 Indexed List 0.1.0
+ * Framework7 Indexed List 0.2.0
  * Framework7 plugin to add Alphabet indexed list
  *
  * https://github.com/boynet/Framework7-Indexed-List-plugin
@@ -12,12 +12,12 @@
 */
 Framework7.prototype.plugins.indexedlist = function (app, params) {
     var $ = window.Dom7;
-    
+
 
     function initIndexedList(page) {
         var eventsTarget = $(page.container).find('.list-index');
         if (eventsTarget.length === 0) return;
-        
+
         var pageContent = $(page.container).find('.page-content');
         buildLetters();
         var isTouched, isMoved;
@@ -25,12 +25,11 @@ Framework7.prototype.plugins.indexedlist = function (app, params) {
         var elementHover;
         var fixedNavbar = pageContent.parents('.navbar-fixed').length > 0 || pageContent.parents('.navbar-through').length > 0;
         var searchBar = $(page.container).find('.searchbar').length > 0;
-        
-        if (searchBar){
-            console.log(eventsTarget);
-            eventsTarget.css('margin-top','44px');
+
+        if (searchBar) {
+            eventsTarget.css('margin-top', '44px');
         }
-        
+
         function handleTouchStart(e) {
             e.preventDefault();
             isTouched = true;
@@ -53,7 +52,7 @@ Framework7.prototype.plugins.indexedlist = function (app, params) {
                 target = $(document.elementFromPoint(e.touches[0].pageX, e.touches[0].pageY));
             }
             if (!target.is('li')) target = target.parents('li');
-                
+
             if (target.length === 0) return;
             if (target.length > 0 && !target.is('.list-index li')) return;
 
@@ -63,8 +62,8 @@ Framework7.prototype.plugins.indexedlist = function (app, params) {
         function handleTouchEnd(e) {
             isTouched = isMoved = false;
         }
-        
-        $(page.container).on('click','.list-index li',function(e){
+
+        $(page.container).on('click', '.list-index li', function (e) {
             var target = $(e.target);
             if (!target.is('li')) target = target.parents('li');
             if (target.length > 0) {
@@ -72,7 +71,7 @@ Framework7.prototype.plugins.indexedlist = function (app, params) {
             }
         });
 
-        function buildLetters(){
+        function buildLetters() {
             var _letters = [];
             var lettersHtml = '';
             pageContent.find('.list-group').each(function () {
@@ -87,7 +86,7 @@ Framework7.prototype.plugins.indexedlist = function (app, params) {
         }
 
         function scrollToLetter(letter) {
-            var scrollToEl = pageContent.find('.list-group ul li[data-index-letter="' + letter + '"]');
+            var scrollToEl = pageContent.find('.list-group ul li[data-index-letter="' + letter + '"]').parent();
             if (!scrollToEl.length) return;
             var scrollTop = scrollToEl.offset().top + pageContent.scrollTop() - (fixedNavbar ? 44 : 0) - (searchBar ? 44 : 0);
             pageContent.scrollTop(scrollTop);
