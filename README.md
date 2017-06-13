@@ -1,6 +1,6 @@
 Framework7 Indexed List Plugin
 =============================
-Demo: http://boynet.github.io/boynet/
+Demo: https://boynet.github.io/boynet/
 
 
 This plugin is for Indexed-List scroll like iOS and Android have, currently works only with Contacts List
@@ -33,7 +33,7 @@ And link them to your app's right AFTER Framework7's scripts and styles:
 ````
 
 ## Demo:
-http://boynet.github.io/boynet/
+https://boynet.github.io/boynet/
 
 OR:
 
